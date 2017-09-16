@@ -348,7 +348,7 @@ router.post('/api/in',function(req, res) {
 });
 var storageOut = multer.diskStorage({
 	destination: function(req, file, callback) {
-		var out = 'out/';
+		var out ='out/';
         mkdirp.sync(dest);
 		callback(null, out)	
 		},
