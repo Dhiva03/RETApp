@@ -1,7 +1,7 @@
 const crypto = require('crypto').randomBytes(256).toString('hex');
   
 module.exports={
- uri:'mongodb://localhost:27017/faceApp',	
+ uri:'mongodb://ret:dk231425@ds139984.mlab.com:39984/ret_face',
  secret:'happy',
  db:'faceApp'
 }

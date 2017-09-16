@@ -11,6 +11,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const register =require('./routes/register');
 const multer = require('multer');
+const port =process.env.PORT || 8080;
 mongoose.Promise=global.Promise;
 mongoose.connect(config.uri,(err)=>{
 	if(err){
@@ -37,7 +38,7 @@ app.use(cookieParser());
 app.use('/upload',express.static(__dirname+'/upload'));
 app.use('/in',express.static(__dirname+'/in'));
 app.use('/out',express.static(__dirname+'/out'));
-app.use(express.static(__dirname+'/client/dist/'));
+app.use(express.static(__dirname+'/public'));
 
 app.use('/register',register);
 
@@ -45,6 +46,6 @@ app.get('*', (req,res) => {
 	res.sendFile(path.join(__dirname+'/client/dist/index.html'));
 });
 
-app.listen(8080,()=> {
+app.listen(port,()=> {
 	console.log('Listening on port 8080');
 });

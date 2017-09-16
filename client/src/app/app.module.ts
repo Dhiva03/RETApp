@@ -12,7 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CompareComponent } from './compare/compare.component';
 import {AuthService} from './auth-service.service';
 import {ToastModule} from 'ng2-toastr/ng2-toastr';
-import { FileSelectDirective } from 'ng2-file-upload';
+import { FileUploadModule } from 'ng2-file-upload';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SidebarComponent,
     DashboardComponent,
     CompareComponent,
-    FileSelectDirective,
+    
    
   ],
   imports: [ BrowserAnimationsModule,
@@ -34,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
             routing,
             ReactiveFormsModule,
             ToastModule.forRoot(),
+            FileUploadModule
            
            
   ],

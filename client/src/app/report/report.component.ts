@@ -7,9 +7,9 @@ import {AuthService} from '../auth-service.service';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
-
+    reports;
   constructor(public authService: AuthService) { }
-reports;
+
   ngOnInit() {
       this.authService.getReports().subscribe(data => {
           console.log(data);

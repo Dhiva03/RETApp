@@ -11,7 +11,7 @@ const moment =require('moment');
 const InTimePicture =require('../model/inTimePicture');
 const Report =require('../model/report');
 const getClosest = require("get-closest");
-
+const mkdirp = require('mkdirp');
 
 const watcher = chokidar.watch('./in').on('add', (path) => {
    const Path =path;
@@ -280,7 +280,9 @@ const watcher1 = chokidar.watch('./out').on('add', (path) => {
 
 var storageIn = multer.diskStorage({
 	destination: function(req, file, callback) {
-		callback(null, './in')	
+		var In = 'in/';
+        mkdirp.sync(dest);
+		callback(null, In)	
 		},
 	filename: function(req, file, callback) {
 	var destName=Date.now()+ path.extname(file.originalname);
@@ -290,7 +292,9 @@ var storageIn = multer.diskStorage({
 
 var storageUpload = multer.diskStorage({
 	destination: function(req, file, callback) {
-		callback(null, './upload')	
+		var upload = 'upload/';
+        mkdirp.sync(dest);
+		callback(null, upload)	
 		},
 	filename: function(req, file, callback) {
 	var destName=Date.now()+ path.extname(file.originalname);
@@ -344,7 +348,9 @@ router.post('/api/in',function(req, res) {
 });
 var storageOut = multer.diskStorage({
 	destination: function(req, file, callback) {
-		callback(null, './out')	
+		var out = 'out/';
+        mkdirp.sync(dest);
+		callback(null, out)	
 		},
 	filename: function(req, file, callback) {
 	var destName=Date.now()+ path.extname(file.originalname);
