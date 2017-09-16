@@ -43,7 +43,7 @@ app.use(express.static(__dirname+'/public'));
 app.use('/register',register);
 
 app.get('*', (req,res) => {
-	res.sendFile(path.join(__dirname+'/client/dist/index.html'));
+	res.sendFile(path.join(__dirname+'/public/index.html'));
 });
 
 app.listen(port,()=> {
