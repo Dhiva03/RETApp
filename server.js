@@ -35,18 +35,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/upload',express.static(__dirname+'/upload'));
+app.use('/in',express.static(__dirname+'/in'));
+app.use('/out',express.static(__dirname+'/out'));
 app.use(express.static(__dirname+'/client/dist/'));
 
 app.use('/register',register);
 
-
-app.get('/home', (req,res) => {
+app.get('*', (req,res) => {
 	res.sendFile(path.join(__dirname+'/client/dist/index.html'));
 });
-app.get('/cam', (req,res) => {
-	res.sendFile(path.join(__dirname+'/client/dist/index.html'));
-});
-
 
 app.listen(8080,()=> {
 	console.log('Listening on port 8080');

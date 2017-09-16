@@ -27,7 +27,7 @@ const watcher = chokidar.watch('./in').on('add', (path) => {
 	if(user){
 		if(user.status=="pending"){
 			var params = {
-					image:'https://cdn.filestackcontent.com/PKYI7vQjeTu5rgX9zWWQ',
+					image:'https://retface.herokuapp.com/in/'+split,
 				    gallery_name:'RET'	
 			};
 		     			 
@@ -91,7 +91,7 @@ const watcher = chokidar.watch('./in').on('add', (path) => {
 		    	   console.log(data);
 		    	   if(data.status=="pending"){
 		    		   var params = {
-		    					image:'https://cdn.filestackcontent.com/PKYI7vQjeTu5rgX9zWWQ',
+		    					image:'https://retface.herokuapp.com/in/'+split,
 		    				    gallery_name:'RET'	
 		    			};
 		    		     		 
@@ -164,7 +164,7 @@ const watcher1 = chokidar.watch('./out').on('add', (path) => {
 	if(user){
 		if(user.status=="pending"){
 			var params = {
-					image:'https://cdn.filestackcontent.com/PKYI7vQjeTu5rgX9zWWQ',
+					image:'https://retface.herokuapp.com/out/'+split,
 				    gallery_name:'RET'	
 			};
 		     			 
@@ -176,7 +176,7 @@ const watcher1 = chokidar.watch('./out').on('add', (path) => {
 				        		Employee.findOne({'face_id':result.body.images[i].candidates[0].face_id}).exec((err,user)=>{	
 				        			console.log(user);
 				        			if(!user.outStatus){
-				        				Report.findOne({'employeeId':user.employeeId ,'timeOut':null}).exec((err,rep)=>{
+				        				Report.findOne({'employeeId':user.employeeId ,'timeOut': null}).exec((err,rep)=>{
 				        					rep.timeOutDate=date;
 				        					rep.timeOut=Time;
 				        					rep.save((err,data)=>{
@@ -224,7 +224,7 @@ const watcher1 = chokidar.watch('./out').on('add', (path) => {
 		    	   console.log(data);
 		    	   if(data.status=="pending"){
 		    		   var params = {
-		    					image:'https://cdn.filestackcontent.com/PKYI7vQjeTu5rgX9zWWQ',
+		    					image:'https://retface.herokuapp.com/out/'+split,
 		    				    gallery_name:'RET'	
 		    			};
 		0    		     			 
