@@ -35,8 +35,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
             ReactiveFormsModule,
             ToastModule.forRoot(),
             FileUploadModule
-           
-           
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

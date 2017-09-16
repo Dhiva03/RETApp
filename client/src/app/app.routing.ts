@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { CompareComponent } from './compare/compare.component';
 import { ReportComponent } from './report/report.component';
+
 const APP_ROUTES: Routes = [
   // { path: '', component: AppComponent },
    { path: 'register', component: RegisterComponent },
