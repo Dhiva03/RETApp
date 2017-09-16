@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 export class AuthService {
 
 
-domain="http://localhost:8080";
+domain="";
 
 
   constructor(public http:Http) { }
