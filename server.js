@@ -28,6 +28,7 @@ app.use(cors({
 	  optionsSuccessStatus: 204,
 	  preflightContinue: false,
 	  credentials:true
+
 }));
 
 
