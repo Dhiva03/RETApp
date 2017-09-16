@@ -1,0 +1,53 @@
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const morgan=require('morgan');
+const router = express.Router();
+const mongoose=require('mongoose');
+const config =require('./config/db');
+const path=require('path');
+const cors = require('cors');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+const register =require('./routes/register');
+const multer = require('multer');
+mongoose.Promise=global.Promise;
+mongoose.connect(config.uri,(err)=>{
+	if(err){
+		console.log('cannot connect to database');
+		
+	}else{
+		console.log('database sucessfully connected');
+	}
+});
+app.use(cors({
+	origin:'http://localhost:4200',
+	  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+	  allowedHeaders:'X-Requested-With,content-type',
+	  optionsSuccessStatus: 204,
+	  preflightContinue: false,
+	  credentials:true
+}));
+
+
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use('/upload',express.static(__dirname+'/upload'));
+app.use(express.static(__dirname+'/client/dist/'));
+
+app.use('/register',register);
+
+
+app.get('/home', (req,res) => {
+	res.sendFile(path.join(__dirname+'/client/dist/index.html'));
+});
+app.get('/cam', (req,res) => {
+	res.sendFile(path.join(__dirname+'/client/dist/index.html'));
+});
+
+
+app.listen(8080,()=> {
+	console.log('Listening on port 8080');
+});
