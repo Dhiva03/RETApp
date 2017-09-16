@@ -27,7 +27,7 @@ const watcher = chokidar.watch('./in').on('add', (path) => {
 	if(user){
 		if(user.status=="pending"){
 			var params = {
-					image:'https://lit-tor-84227.herokuapp.com/in/'+split,
+					image:'https://murmuring-plains-24395.herokuapp.com/in/'+split,
 				    gallery_name:'RET'	
 			};
 		     			 
@@ -91,7 +91,7 @@ const watcher = chokidar.watch('./in').on('add', (path) => {
 		    	   console.log(data);
 		    	   if(data.status=="pending"){
 		    		   var params = {
-		    					image:'https://retface.herokuapp.com/in/'+split,
+		    					image:'https://murmuring-plains-24395.herokuapp.com/in/'+split,
 		    				    gallery_name:'RET'	
 		    			};
 		    		     		 
@@ -164,7 +164,7 @@ const watcher1 = chokidar.watch('./out').on('add', (path) => {
 	if(user){
 		if(user.status=="pending"){
 			var params = {
-					image:'https://lit-tor-84227.herokuapp.com/out/'+split,
+					image:'https://murmuring-plains-24395.herokuapp.com/out/'+split,
 				    gallery_name:'RET'	
 			};
 		     			 
@@ -224,7 +224,7 @@ const watcher1 = chokidar.watch('./out').on('add', (path) => {
 		    	   console.log(data);
 		    	   if(data.status=="pending"){
 		    		   var params = {
-		    					image:'https://lit-tor-84227.herokuapp.com/out/'+split,
+		    					image:'https://murmuring-plains-24395.herokuapp.com/out/'+split,
 		    				    gallery_name:'RET'	
 		    			};
 		0    		     			 
