@@ -22,7 +22,7 @@ mongoose.connect(config.uri,(err)=>{
 	}
 });
 app.use(cors({
-	origin:'http://localhost:4200',
+	origin:'*',
 	  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 	  allowedHeaders:'X-Requested-With,content-type',
 	  optionsSuccessStatus: 204,
